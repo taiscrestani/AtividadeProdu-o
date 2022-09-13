@@ -24,9 +24,7 @@ int main() {
         }
         
         {
-         if (opcao == 0){
-            printf("Saindo...\n");
-            break;
+
          }
         else if (opcao == 1){
             printf("Soma: %f\n", num1 + num2);
@@ -65,4 +63,3 @@ int main() {
 }
 while(opcao != 0);
 }
-        

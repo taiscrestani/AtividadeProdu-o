@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/* Código adaptado de: https://wagnergaspar.com/exercicio-8-faca-uma-calculadora-para-as-4-operacoes-matematicas-com-switch-case/ */ 
+
+int main() {
+    float opcao, num1, num2, result;
+    double result1, num3;
+
+    do {
+        printf("\n Nome: Taís Crestani - Matrícula: 202211607 - Curso: ADS LaSalle\n");
+        printf("\n1 - Soma\n2 - Subtracao\n3 - Multiplicacao\n4 - Divisao\n5 - Potencia\n6 - Raiz Quadrada\n\n");
+        scanf("%f", &opcao);
+
+        if(opcao > 0 && opcao <= 5){
+            printf("Digite dois valores: ");
+            scanf("%f%f",&num1, &num2);
+        }
+        
+        else if (opcao >= 6 && opcao < 7) {
+            printf("Digite um valor: ");
+            scanf("%lf", &num3);
+        }
+        
+        {
+         if (opcao == 0){
+            printf("Saindo...\n");
+            break;
+         }
+        else if (opcao == 1){
+            printf("Soma: %f\n", num1 + num2);
+            break;
+        }
+       else  if (opcao == 2){
+            printf("Subtracao: %f\n", num1 - num2);
+            break;
+       }
+        else if (opcao == 3){
+            printf("Multiplicacao: %f\n", num1 * num2);
+            break;
+        }
+        else if (opcao == 4){
+            while(num2 == 0) {
+                printf("Nao existe divisao por zero!\nDigite outro valor: ");
+                scanf("%f", &num2);
+            }
+            printf("Divisao: %f\n", num1 / num2);
+           break;
+        }
+        /* Código de potência adaptado de: https://www.programiz.com/c-programming/examples/power-number */ 
+        else if (opcao == 5){
+        result = pow(num1, num2);
+        printf("Potência %.1f^%.1f = %.2f", num1, num2, result);
+        return 0;
+        break;
+        }
+        
+        /* Código de raiz quadrada adaptado de: https://www.programiz.com/c-programming/library-function/math.h/sqrts/power-number */ 
+        else if (opcao == 6);{
+         result1 = sqrt(num3);
+         printf("Raiz quadrada %.2lf =  %.2lf", num3, result1);
+        }
+    } 
+}
+while(opcao != 0);
+}
+        
